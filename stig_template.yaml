@@ -1,0 +1,5 @@
+- name: Solve STIG findings
+  hosts: 
+  remote_user: 
+
+  tasks:
