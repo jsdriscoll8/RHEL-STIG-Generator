@@ -1,0 +1,7 @@
+  - name: Set minimum encryption rounds
+    ansible.builtin.lineinfile:
+      path: /etc/login.defs
+      line: SHA_CRYPT_MIN_ROUNDS 5000
+      regexp: ".*SHA_CRYPT_MIN_ROUNDS.*"
+      insertafter: SHA_CRYPT_MIN_ROUNDS 5000
+

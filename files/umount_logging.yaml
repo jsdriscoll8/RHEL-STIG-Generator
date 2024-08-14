@@ -1,0 +1,8 @@
+  - name: Add umount logging rules
+    ansible.builtin.lineinfile:
+      path: /etc/audit/rules.d/perm_mod.rules
+      create: true
+      line: -a always,exit -F arch=b32 -S umount -F auid>=1000 -F auid!=unset -k privileged-umount
+      regexp: ".*arch=b32.*umount .*"
+      insertafter: ClientAliveInterval 600
+

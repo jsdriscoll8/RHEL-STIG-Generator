@@ -1,0 +1,8 @@
+  - name: Log all martians by default | V-257961
+    ansible.builtin.lineinfile:
+      path: /etc/sysctl.d/default-martians.conf
+      create: true
+      line: net.ipv4.conf.default.log_martians=1
+      regexp: ".*net.ipv4.conf.default.log_martians.*"
+      insertafter: net.ipv4.conf.default.log_martians=1
+

@@ -1,0 +1,8 @@
+  - name: Set idle session timeout to 15 minutes
+    ansible.builtin.lineinfile:
+      path: /etc/systemd/logind.conf
+      create: true
+      line: StopIdleSessionSec=900
+      regexp: ".*StopIdleSessionSec *=.*"
+      insertafter: StopIdleSessionSec=900
+

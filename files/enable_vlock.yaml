@@ -1,0 +1,16 @@
+  - name: Enable the v-lock command
+    ansible.builtin.lineinfile:
+      path: /etc/tmux.conf
+      create: true
+      line: set -g lock-command vlock
+      regexp: ".*lock-command.*"
+      insertafter: set -g lock-command vlock
+
+  - name: Bind the lock session
+    ansible.builtin.lineinfile:
+      path: /etc/tmux.conf
+      create: true
+      line: bind X lock-session
+      regexp: ".*lock-session.*"
+      insertafter: bind X lock-session
+

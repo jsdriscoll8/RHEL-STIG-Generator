@@ -1,0 +1,8 @@
+  - name: Set SSH daemon to perform privilege separation
+    ansible.builtin.lineinfile:
+      path: /etc/ssh/sshd_config
+      create: true
+      line: UsePrivilegeSeparation sandbox
+      regexp: ".*UsePrivilegeSeparation.*"
+      insertafter: UsePrivilegeSeparation sandbox
+

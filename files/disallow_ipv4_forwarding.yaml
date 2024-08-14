@@ -1,0 +1,8 @@
+  - name: Disable ipv4 forwarding | V-257970
+    ansible.builtin.lineinfile:
+      path: /etc/sysctl.d/disable-ipv4-forwarding.conf
+      create: true
+      line: net.ipv4.conf.all.forwarding = 0
+      regexp: ".*net.ipv4.conf.all.forwarding.*"
+      insertafter: net.ipv4.conf.all.forwarding = 0
+

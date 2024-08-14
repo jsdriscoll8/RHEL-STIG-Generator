@@ -1,0 +1,8 @@
+  - name: Ensure syslog is active
+    ansible.builtin.lineinfile:
+      path: /etc/audit/plugins.d/syslog.conf
+      create: true
+      line: "active = yes"
+      regexp: "active.*"
+      insertafter: "active = yes"
+

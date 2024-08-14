@@ -1,0 +1,8 @@
+- name: Limit password retrys to 3 in system-auth
+    ansible.builtin.lineinfile:
+      path: /etc/pam.d/system-auth
+      create: true
+      line: password required pam_pwquality.so retry=3
+      regexp: ".*password.*pam_pwquality.so.*"
+      insertafter: password required pam_pwquality.so retry=3
+

@@ -1,0 +1,3 @@
+  - name: Run FIPS mode setup
+    ansible.builtin.command: sudo fips-mode-setup --enable
+

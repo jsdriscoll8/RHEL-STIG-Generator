@@ -1,0 +1,6 @@
+  - name: Disable non-privileged modification of graphical settings
+    ansible.builtin.lineinfile:
+      path: /etc/dconf/db/local.d/locks/session
+      create: true
+      line: "banner-message-enable"
+

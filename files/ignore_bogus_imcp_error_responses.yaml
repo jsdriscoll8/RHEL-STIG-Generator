@@ -1,0 +1,8 @@
+  - name: Ignore bogus IMCP errors | V-257967
+    ansible.builtin.lineinfile:
+      path: /etc/sysctl.d/ignore-bogus-imcp-errors.conf
+      create: true
+      line: net.ipv4.icmp_ignore_bogus_error_responses = 1
+      regexp: ".*net.ipv4.icmp_ignore_bogus_error_responses.*"
+      insertafter: net.ipv4.icmp_ignore_bogus_error_responses = 1
+

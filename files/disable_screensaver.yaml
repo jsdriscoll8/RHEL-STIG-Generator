@@ -1,0 +1,15 @@
+  - name: Disable screensaver | security settings 
+    ansible.builtin.blockinfile:
+      path: /etc/dconf/db/local.d/00-security-settings
+      create: true
+      marker: "# {mark} SCREENSAVER SETTINGS"
+      block: |
+        [org/gnome/desktop/screensaver]
+        picture-uri=''
+
+  - name: Disable screensaver | security settings lock
+    ansible.builtin.lineinfile:
+      path: /etc/dconf/db/local.d/locks/00-security-settings-lock
+      create: true
+      line: /org/gnome/desktop/screensaver/picture-uri
+

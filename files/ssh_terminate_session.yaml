@@ -1,0 +1,8 @@
+  - name: Set idle session timeout to 15 minutes
+    ansible.builtin.lineinfile:
+      path: /etc/ssh/sshd_config
+      create: true
+      line: ClientAliveInterval 600
+      regexp: ".*ClientAliveInterval.*"
+      insertafter: ClientAliveInterval 600
+

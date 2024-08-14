@@ -1,0 +1,8 @@
+  - name: Ensure minimum required 5,000 password hashing rounds | system-auth
+    ansible.builtin.lineinfile:
+      path: /etc/pam.d/system-auth
+      create: true
+      line: password sufficient pam_unix.so sha512 rounds=5000
+      regexp: ".*password.*pam_unix.so.*"
+      insertafter: password sufficient pam_unix.so sha512 rounds=5000
+

@@ -1,0 +1,8 @@
+  - name: Set min pw length to 15
+    ansible.builtin.lineinfile:
+      path: /etc/login.defs
+      create: true
+      line: "PASS_MIN_LEN 15"
+      regexp: ".*PASS_MIN_LEN.*"
+      insertafter: "PASS_MIN_LEN 15"
+

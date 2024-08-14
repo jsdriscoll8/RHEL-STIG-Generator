@@ -1,0 +1,8 @@
+  - name: Set SSH client max to 1
+    ansible.builtin.lineinfile:
+      path: /etc/ssh/sshd_config
+      create: true
+      line: ClientAliveCountMax 1
+      regexp: ".*ClientAliveCountMax.*"
+      insertafter: ClientAliveCountMax 1
+

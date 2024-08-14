@@ -1,0 +1,8 @@
+  - name: Log all ipv4 martians | V-257960
+    ansible.builtin.lineinfile:
+      path: /etc/sysctl.d/ipv4-martians.conf
+      create: true
+      line: net.ipv4.conf.all.log_martians=1
+      regexp: ".*net.ipv4.conf.all.log_martians.*"
+      insertafter: net.ipv4.conf.all.log_martians=1
+

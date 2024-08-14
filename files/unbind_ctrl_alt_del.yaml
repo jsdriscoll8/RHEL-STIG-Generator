@@ -1,0 +1,9 @@
+  - name: Remove ctrl+alt+delete binding
+    ansible.builtin.blockinfile:
+      path: /etc/dconf/db/local.d/00-security-settings
+      create: true
+      marker: "# {mark} CTRL+ALT+DEL SETTINGS"
+      block: |
+        [org/gnome/settings-daemon/plugins/media-keys]
+        logout=['']
+
